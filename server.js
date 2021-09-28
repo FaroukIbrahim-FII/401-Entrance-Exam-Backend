@@ -79,7 +79,7 @@ function updateFruits(req, res){
 }
 function deleteFruits(req, res){
     const id = req.params.id;
-    const email=req.query.email;
+    const email=req.body.email;
     fruits.deleteOne({_id:id}, (err,result)=>{
         fruits.find({email: email},(err,result)=>{
             res.json(result);
